@@ -1,9 +1,9 @@
 package com.sbcourse.agenda.persistence.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.*;
@@ -11,7 +11,10 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import lombok.Data;
+
 @Data
+@EntityListeners(AuditingEntityListener.class)
 @MappedSuperclass
 public abstract class BaseEntity implements Serializable {
 
@@ -40,4 +43,7 @@ public abstract class BaseEntity implements Serializable {
             this.setUuid(UUID.randomUUID().toString());
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

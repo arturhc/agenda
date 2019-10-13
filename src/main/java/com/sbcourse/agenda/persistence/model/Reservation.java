@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class Reservation extends BaseEntity {
 
     @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "service_id", referencedColumnName = "id")
+    @JoinColumn(name = "service_id")
     private Service service;
 
     @Column(name = "start_date")
@@ -28,6 +28,5 @@ public class Reservation extends BaseEntity {
 
     @Column(name = "cellphone")
     private String cellphone;
-
 
 }
