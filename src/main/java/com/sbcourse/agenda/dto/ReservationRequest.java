@@ -10,13 +10,10 @@ import java.sql.Timestamp;
 public class ReservationRequest {
 
     @NotNull
-    private Long serviceId;
+    private Long productServiceId;
 
     @NotNull
     private Timestamp startDate;
-
-    @NotNull
-    private Timestamp endDate;
 
     @NotEmpty
     private String email;

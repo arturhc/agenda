@@ -1,6 +1,7 @@
 package com.sbcourse.agenda.persistence.model;
 
 import lombok.Data;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -8,11 +9,12 @@ import java.time.LocalDateTime;
 @Data
 @Entity
 @Table(name = "reservation")
+@Where(clause = "deleted = false")
 public class Reservation extends BaseEntity {
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "service_id")
-    private Service service;
+    private ProductService productService;
 
     @Column(name = "start_date")
     private LocalDateTime startDate;

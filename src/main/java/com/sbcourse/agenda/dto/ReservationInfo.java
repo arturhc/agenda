@@ -1,6 +1,6 @@
 package com.sbcourse.agenda.dto;
 
-import com.sbcourse.agenda.persistence.model.Service;
+import com.sbcourse.agenda.persistence.model.ProductService;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -13,7 +13,7 @@ public class ReservationInfo {
     private LocalDateTime createdAt;
     private LocalDateTime modifiedAt;
 
-    private Service service;
+    private ProductService productService;
 
     private LocalDateTime startDate;
     private LocalDateTime endDate;

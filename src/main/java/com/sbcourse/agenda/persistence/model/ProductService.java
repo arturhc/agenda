@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "service")
-public class Service extends BaseEntity {
+@Table(name = "productService")
+public class ProductService extends BaseEntity {
 
     @Column(name = "description")
     private String description;
@@ -18,7 +18,7 @@ public class Service extends BaseEntity {
     @Column(name = "duration")
     private Integer duration;
 
-    @Column(name = "description_type")
+    @Column(name = "duration_type")
     private String durationType;
 
 }
